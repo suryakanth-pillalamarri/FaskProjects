@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Form</title>
+</head>
+<body>
+    <form method="POST" action="/submit-employee-details">
+        {{ form.hidden_tag() }}
+        <div>
+            <label for="name">Name:</label>
+            {{ form.name }}
+        </div>
+        <div>
+            <label for="age">Age:</label>
+            {{ form.age }}
+        </div>
+        <div>
+            <label for="department">Department:</label>
+            {{ form.department }}
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
