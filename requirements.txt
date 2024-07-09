@@ -1,0 +1,8 @@
+flask
+flask-wtf
+flask-sqlalchemy
+Werkzeug
+flask-login
+jinja2
+Click
+pyodbc
